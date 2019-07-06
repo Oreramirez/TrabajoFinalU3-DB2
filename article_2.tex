@@ -1,0 +1,608 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Resumen" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{0.2em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{VIRTUALIZACIÓN Y CONTENEDORES $\bullet$ Mayo 2019 $\bullet$ Trabajo, Nro. 4} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{VIRTUALIZACIÓN Y CONTENEDORES} % Article title
+\author{%
+\textsc{Marko Antonio Rivas Rios} \\[1ex] % Your name
+\textsc{Jorge Luis Mamani Maquera} \\[1.01ex] % Your name
+\textsc{Orlando Antonio Acosta Ortiz} \\[1.02ex] % Your name
+\textsc{Yofer Nain Catari Cabrera} \\[1.03ex] % Your name
+\textsc{Orestes Ramirez Ticona} \\[1.04ex] % Your name
+\textsc{Roberto Zegarra Reyes} \\[1.05ex] % Your name
+\normalsize Universidad Privada de Tacna \\  % Your institution
+\normalsize {} % Your email address
+%\and % Uncomment if 2 authors are required, duplicate these 4 lines if more
+%\textsc{Jane Smith}\thanks{Corresponding author} \\[1ex] % Second author's name
+%\normalsize University of Utah \\ % Second author's institution
+%\normalsize \href{mailto:jane@smith.com}{jane@smith.com} % Second author's email address
+}
+\date{Mayo 13, 2019} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+\noindent En este trabajo se realizará un estudio de las tecnologías de virtualización de
+contenedores con el fin de implementar y poner en marcha un sistema que permita
+orquestar el despliegue de aplicaciones sobre un entorno empresarial.
+Para ello, se realizará en primera instancia un análisis de los sistemas de virtualización
+más habituales para continuar introduciendo los conceptos y sistemas de virtualización
+de contenedores. Una vez introducida la parte teórica se analizan distintas
+herramientas de virtualización de contenedores centrándonos en la herramienta
+Docker para la cual se detalla su arquitectura, funcionamiento y proceso de instalación
+para finalizar con un par de ejemplos prácticos de despliegue de servicios.
+A continuación, una vez que ya hemos implementado y analizado un sistema de
+virtualización de contenedores como tecnología necesaria de base, pasamos a
+estudiar distintas soluciones del mercado para implementar un sistemas de
+orquestación basado en microservicios para el despliegue de aplicaciones de carácter
+corporativo. Finalizamos con la implantación, instalación y puesta en marcha del
+sistema estudiado acompañado de unos ejemplos de orquestación usando dos
+aplicaciones de código abierto que se ven bastante habitualmente en los entornos
+corporativos actuales para dar soporte a distintas soluciones.
+\end{abstract}
+}
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introducción}
+
+\lettrine[nindent=0em,lines=2]{L}a tecnología llego para complementar y completar la virtualización de servidores es la
+virtualización de contenedores de aplicaciones. Esta tecnología va un paso mas allá en el
+paradigma de la virtualización, permitiendo no sólo el salto de virtualizar servidores sino también
+de virtualizar directamente un contenedor donde se ejecuta una aplicación, permitiendo de este
+modo una mayor abstracción aislando la componente "lógica de la aplicación" del componente
+“sistema operativo”.
+
+
+\section{Objetivos}
+\begin{flushright}
+\begin{itemize}
+\lettrine[nindent=0em,lines=2]{S}e busca saber un poco mas sobre:
+
+%------------------------------------------------
+\textbf{}\\
+\textbf{¿Qué es la virtualización?}\\
+-------------------------------------
+\textbf{}\\
+- Técnica que permite, mediante software, convertir una máquina
+real en varias máquinas independientes que se ejecutan al mismo
+tiempo.\textbf{}\\
+- Cada una de estas máquinas independientes recibe el nombre de
+“máquina virtual huesped”, y puede estar gestionada por
+cualquier sistema operativo (o casi).\textbf{}\\
+\textbf{}\\
+- La máquina real sobre la que se ejecutan los huéspedes se
+denomina “máquina anfitriona”.
+- El software que hace posible la ejecución simultánea de varios
+huéspedes sobre un único anfitrión es el “hipervisor”.
+\textbf{}\\
+\textbf{}\\
+\textbf{¿Qué es la virtualización en contenedores?}\\
+----------------------------------------------------
+- Cada huésped “verá” su propia CPU, memoria, discos, etc,
+independientemente de los recursos de que disponga el anfitrión
+o el resto de huéspedes.
+\textbf{}\\
+\textbf{}\\
+\textbf{¿Qué se consigue con la virtualización?}\\
+-----------------------------------------------
+\textbf{}\\
+• En centros de datos:\textbf{}\\
+\textbf{}\\
+- Integrar en una única máquina varios servidores; se ahorra en:
+adquisición de equipos, actualización de hardware, costes de
+mantenimiento (refrigeración, por ejemplo), espacio, etc.
+\textbf{}\\
+- Se mantiene entre máquinas el mismo nivel de aislamiento que si
+éstas estuviesen físicamente separadas (un fallo en una máquina
+virtual no afecta al resto).
+\textbf{}\\
+\textbf{}\\
+\textbf{¿Qué se consigue con la virtualización en contenedores?}\\
+------------------------------------------------------
+\textbf{}\\
+• En entornos personales:
+\textbf{}\\
+\textbf{}\\
+- Lograr, con una única máquina, separar varios entornos de
+desarrollo y/o pruebas.
+\textbf{}\\
+\textbf{}\\
+• Aprender a utilizar nuevo software o nuevas técnicas sin poner en
+riesgo el software preexistente en nuestro equipo. Ejemplos:
+\textbf{}\\
+\textbf{}\\
+- Instalar sobre Windows una máquina virtual VMWare que sea un Linux\textbf{}\\
+Centos con Oracle express instalado.
+\textbf{}\\
+- Montar y probar una red local formada por varias máquinas virtuales
+sobre un único anfitrión.
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{Virtualización}\\
+--------------------------
+\textbf{}\\
+La virtualización es una técnica que permite abstraer, por medio de herramientas SW, el
+HW proporcionado por una máquina física (anfitriona) para simular el funcionamiento de otra
+máquina (huesped). Al conjunto de la máquina huésped y su SO propio se le llama máquina
+virtual, la cual utiliza los recursos de la máquina física anfitriona sin ser la realmente poseedora
+de los mismos. Esto implica ciertas ventajas potenciales como economía de recursos, ahorrro
+de espacio fisico, coexistencia de multiples SO en una única máquina, mayor aislamiento entre
+procesos, etc.
+\textbf{}\\
+
+\textbf{}\\
+\textbf{Contenedor}\\
+--------------------------
+\textbf{}\\
+Docker es un proyecto que permite crear aplicaciones en contenedores de software
+que sean ligeras, portátiles y autosuficientes Los contenedores son paquetes de elementos
+que te permiten crear un entorno donde correr aplicaciones independientemente del sistema
+operativo del host El propósito de este proyecto es investigar uso de la virtualización
+de servidores basada en Docker Containers, entender la tecnología que se ejecuta detrás de ella, 
+conocer las posibilidades que tiene y construir un clúster de contenedores que ejecuten una aplicación.
+\textbf{}\\
+\textbf{}\\
+\textbf{Tipos de virtualización}\\
+------------------------------------
+\textbf{}\\
+La virtualización permite la consolidación de múltiples recursos de TI, 
+eleva los índices de utilización de servidores y almacenamientos,
+ahorra costos y espacios y permite elevar los índices de disponibilidad. 
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{Los Siguientes son tipos de virtualización:}\\
+
+\textbf{}\\
+- Virtualización de Servidor
+\textbf{}\\
+- Virtualización de Almacenamiento
+\textbf{}\\
+- Virtualización de Escritorio
+\textbf{}\\
+- Virtualización de Redes
+\textbf{}\\
+- Virtualización de Redes
+\textbf{}\\
+\textbf{}\\
+\textbf{Ventajas de la Virtualización}\\
+------------------------------------------
+\textbf{}\\
+- Disminuye la utilización de hardware físico.
+
+- Reducción de gastos. Al disminuir los hardwares físicos los gastos asociados a ellos (luz, mantenimiento, etc.) se ven recortados.
+
+- Aumento de la eficiencia. A medida que la virtualización se va estableciendo dentro de una compañía, los usuarios utilizarán más eficiente los componentes del hardware y, por tanto, no será necesario establecer diferentes conexiones de internet para servidores, ordenadores e emails.
+
+- Largo ciclo de vida. Con la virtualización los programas se almacenan en servidores, lo que implica que la necesidad de equipos más modernos es más reducida que en un hardware.
+
+
+
+
+
+
+
+
+
+
+
+\section{Virtualización y Contenedores}
+
+\subsection{Virtualización}
+
+
+ \textbf{A). Modelos principales de virtualizacion }\\
+
+\textbf{}\\
+ \textbf{1.  Virtualización de plataforma }\\
+------------------------------------
+\textbf{}\\
+ Este es un modelo especialmente a tener en cuenta, ya que es el aplicado para lo que se llama consolidación de servidores. La virtualización o consolidación de servidores puede verse como un particionado de un servidor físico de manera que pueda albergar distintos servidores dedicados (o privados) virtuales que ejecutan de manera independiente su propio sistema operativo y dentro de él los servicios que quieran ofrecer, haciendo un uso común de manera compartida y aislada sin ser conscientes del hardware subyacente
+
+ \textbf{1.1  Sistemas operativos invitados }\\
+------------------------------------
+\textbf{}\\
+Sobre una aplicación para virtualización no
+hace uso de hipervisor u otra capa de virtualización que corre sobre la instancia
+de un sistema operativo sistema operativo host se permite la ejecución de
+servidores virtuales con sistemas operativos independientes.
+
+ \textbf{1.2  Emulacion }\\
+------------------------------------
+\textbf{}\\
+Un emulador que replica una arquitectura hardware al completo
+procesador, juego de instrucciones, periféricos hardware- permite que se
+ejecuten sobre él máquinas virtuales.
+
+\textbf{1.3  Virtualizacion Completa }\\
+------------------------------------
+\textbf{}\\ 
+También llamada nativa. La capa de virtualización, un
+hipervisor, media entre los sistemas invitados y el anfitrión, la cual incluye
+código que emula el hardware subyacente –si es necesario- para las máquinas
+virtuales, por lo que es posible ejecutar cualquier sistema operativo sin
+modificar, siempre que soporte el hardware subyacente.
+
+\textbf{1.4  Virtualizacion a nivel del sistema operativo }\\
+------------------------------------
+\textbf{}\\
+Virtualiza los servidores sobre el
+propio sistema operativo, sin introducir una capa intermedia de virtualización.
+
+\textbf{1.5 Virtualizacion a nivel del kernel }\\
+\textbf{}\\
+------------------------------------
+\textbf{}\\
+Convierte el núcleo Linux en hipervisor
+utilizando un módulo, el cual permite ejecutar máquinas virtuales y otras
+instancias de sistemas operativos en el espacio de usuario del núcleo Linux
+anfitrión
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+ \textbf{2. Virtualizacion de recursos }\\
+------------------------------------
+\textbf{}\\
+En este segundo caso el recurso que se abstrae es un recurso
+individual de un computador, como puede ser la conexión a red, el almacenamiento
+principal y secundario, o la entrada y salida.
+\textbf{}\\
+ \textbf{2.1  Encapsulamiento }\\
+------------------------------------
+\textbf{}\\
+Se trata de la ocultación de la complejidad y características del
+recurso creando una interfaz simplificada. Es el caso más simple de
+virtualización de recursos, como se puede ver.
+\textbf{}\\
+ \textbf{2.2  Memoria virtual }\\
+------------------------------------
+\textbf{}\\
+Permite hacer creer al sistema que dispone de mayor cantidad
+de memoria principal y que se compone de segmentos contiguos. Como
+sabemos, es usada en todos los sistemas operativos modernos. 
+\textbf{}\\
+\textbf{2.3  Virtualización de almacenamientl }\\
+------------------------------------
+\textbf{}\\
+Abstracción completa del almacenamiento
+lógico sobre el físico (disco y almacenamiento son el recurso abstraído). Es
+completamente independiente de los dispositivos hardware.
+\textbf{}\\
+\textbf{2.3 Virtualización de red }\\
+------------------------------------
+\textbf{}\\
+La virtualización de red consiste en la creación de un
+espacio de direcciones de red virtualizado dentro de otro o entre subredes. Es
+fácil ver que el recurso abstraído es la propia red. Ejemplos bien conocidos de
+virtualización de red son OpenVPN y OpenSwarm, que permiten crear VPNs. 
+\textbf{}\\
+\textbf{3. Virtualización de aplicaciones }\\
+------------------------------------
+\textbf{}\\
+ Las aplicaciones son ejecutadas encapsuladas sobre el
+sistema operativo  de manera que aunque
+creen que interactúan con él de la manera habitual, en realidad no
+lo hacen, sino que lo hacen bien con una máquina virtual de aplicación o con algún
+software de virtualización. 
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{4. Virtualización de escritorio }\\
+------------------------------------
+\textbf{}\\
+ Consiste en la manipulación de forma remota del escritorio
+de usuario (aplicaciones, archivos, datos), que se encuentra separado de la máquina
+física, almacenado en un servidor central remoto en lugar de en el disco duro del
+computador local. 
+\textbf{}\\
+\textbf{}\\
+ \textbf{B). Cuales son las Ventajas de la Virtualización}\\
+
+\textbf{}\\
+-Hardware de los Servidores Infrautilizado
+-Se agota el Espacio en los Data Centers 
+-Demanda de una mejor Eficiencia Energética 
+
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+
+
+
+
+
+
+
+
+
+\subsection{Contenedores}
+\textbf{¿Que son los contenedores?}\\
+Es una pregunta básica, pero necesaria. Podemos pensar en un contenedor como un servidor que arranca desde una imagen estática predefinida con un sistema operativo con un kernel Linux y con las librerías y recursos mínimos necesarios de CPU, memoria, almacenamiento, etc. Realmente, un contenedor consiste en el empaquetado de una aplicación para que pueda correr en cualquier sistema abstrayéndose de la plataforma sobre la que está corriendo.
+\textbf{}\\
+\textbf{}\\
+\textbf{¿Para qué se pueden usar los contenedores?}\\
+Con una aplicación empaquetada con versiones de sistema, librerías y demás recursos óptimos para su ejecución, evitamos problemas de incompatibilidades. Por ejemplo, \textbf{si los contenedores son independientes de las características del servidor donde se alojan}, evitamos problemas a la hora de que actualicemos este.\textbf{}
+Otro ejemplo es que un contenedor puede ejecutarse en cualquier servidor Linux, Microsoft e incluso en MacOS nos facilita las migraciones entre máquinas.\textbf{}
+\textbf{}\\
+Las aplicaciones que pueden ejecutarse en un contenedor son múltiples y variadas, \textbf{desde un apache a una BBDD Mongo.}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{¿Qué ventajas nos ofrecen los contenedores sobre un servidor físico o virtual?}\\
+Al principio del texto hablábamos de los cuatro pilares que sostienen el éxito de los servicios que nos ofrecen desde la nube pública y que también son aplicables cuando trabajamos con contenedores. Con el uso de orquestadores de contenedores tipo Kubernetes, Openshift, Mesos o un largo etcétera, podemos asegurar que \textbf{nuestra aplicación va a estar siempre disponible para su ejecución.} Podremos aumentar o disminuir el número de contenedores en función de nuestras necesidades fácilmente y asegurar que, en caso de fallo del contenedor por cualquier casuística, este podrá arrancar automáticamente de manera instantánea.
+\textbf{}\\
+\textbf{}\\
+Los contenedores están diseñados \textbf{para que tengan una vida corta pero útil: arrancan, ejecutan su función y mueren.} Debido a que se trata de sistemas muy livianos, los contenedores normalmente tardan pocos segundos en arrancar. Por el hecho de ser tan efímeros, están enfocados a ejecutar la aplicación o aplicaciones para la que fueron creados y una vez finalizada, se elimina dicho contenedor. De esta manera, mientras no necesitemos ejecutar una aplicación en concreto, estamos dejando libres los recursos del servidor anfitrión para poder ser utilizados por otros contenedores. \textbf{De esta manera no hace falta mantener un servidor encendido 24 horas} consumiendo energía y recursos si solo va hacer, por ejemplo, una inserción de una tabla en una base de datos en un proceso batch a final de mes.
+\textbf{}\\
+\textbf{}\\
+\textbf{¿Puedo usar un contenedor como un servidor normal?}\\
+Podemos acceder a un contenedor a través de una shell como si de un servidor normal se tratase. También podemos ejecutar comandos contra un contenedor que esté corriendo, pero tenemos que tener en cuenta que, como hemos indicado antes, un contenedor arranca de una imagen estática predefinida. Es decir, \textbf{salvo que lo indiquemos a propósito}, todos los cambios que hagamos en nuestro contenedor, los perderemos cuando lo matemos. Si arrancamos un nuevo contenedor con la misma imagen, tendremos la misma configuración que tenía antes de hacer ningún cambio.
+\textbf{}\\
+\textbf{}\\
+\textbf{¿Qué pasa con mis cambios realizados sobre la imagen del contenedor?}\\
+Cuando tenemos un contenedor corriendo, podemos hacer cualquier cambio de configuración sobre su imagen inicial. En el caso de que quisiéramos conservar los cambios que hemos aplicado, podemos salvarlos en una imagen nueva. Esta nueva imagen, a su vez, estaría disponible para ser utilizada por otros contenedores y así sucesivamente.
+
+\textbf{}\\
+\textbf{}\\
+
+ \textbf{A). Virtualización de Contenedores }\\
+\textbf{}\\
+La virtualización basada en contenedores, también llamada virtualización del sistema operativo, es una aproximación a la virtualización en la cual la capa de virtualización se ejecuta como una aplicación en el sistema operativo (OS). En este enfoque, el kernel del sistema operativo se ejecuta sobre el nodo de hardware con varias máquinas virtuales (VM) invitadas aisladas, que están instaladas sobre el mismo. Los huéspedes aislados se denominan contenedores.\textbf{}\\
+\textbf{}\\
+Con la virtualización basada en contenedores, no existe la sobrecarga asociada con tener a cada huésped ejecutando un sistema operativo completamente instalado. Este enfoque también puede mejorar el rendimiento porque hay un solo sistema operativo encargándose de los avisos de hardware. Una desventaja de la virtualización basada en contenedores, sin embargo, es que cada invitado debe utilizar el mismo sistema operativo que utiliza el host.
+\textbf{}\\
+Por lo general, los entornos corporativos evitan la virtualización basada en contenedores, prefiriendo los hipervisores y la opción de tener muchos sistemas operativos. Un entorno virtual basado en contenedor, sin embargo, es una opción ideal para los proveedores de alojamiento que necesitan una manera eficiente y segura para ofrecer sistemas operativos para que los clientes ejecuten sus servicios en ellos.
+
+\textbf{}\\
+ \textbf{B). Diferencia entre Virtualizacion Clasica y Virtualizacion de Contenedores}\\
+\textbf{}\\
+\textbf{- Virtualización clásica}\\
+La virtualización tal y como se entiende habitualmente supone el despliegue de múltiples máquinas software completas dentro de un mismo hardware. Dependiendo de cómo se hace el despliegue existen dos tipos de virtualización, hipervisores de tipo 1 o instalado directamente como sistema operativo, e hipervisores de tipo 2 o instalados sobre un sistema operativo comercial; como se comentaron en Mi SCADA en las nubes.\textbf{}\\
+La virtualización completa de las máquinas permite que unas sean independientes de las otras, de manera que se pueden gestionar como si fuesen máquinas hardware separadas, pero favoreciendo la ampliación de recursos en caso de ser necesario.
+\textbf{}\\
+
+\textbf{- Virtualización mediante contenedores}\\
+
+El último avance de la virtualización es la utilización de contenedores. Con esta tecnología no se virtualiza el sistema entero, sino que, partiendo de una imagen de base, se registran los cambios realizados tanto por instalaciones como por desinstalaciones, de aplicaciones y servicios. De esta manera los ficheros de las imágenes de las máquinas son mucho menores y las necesidades de espacio se reducen considerablemente.\textbf{}\\
+\textbf{}\\
+\textbf{-Comparación entre virtualización tradicional y con contenedores}\\\textbf{}\\
+Los contenedores están aislados unos de otros, pero comparten un mismo sistema operativo, librerías y binarios. Esto hace que el despliegue sea mucho más rápido que una instalación nueva, así como los reinicios y las migraciones, pero tiene el problema de que una vulnerabilidad en una máquina anfitrión puede afectar también al resto, al compartir la base del sistema operativo.
+
+\textbf{}\\
+\textbf{}\\
+ \textbf{C).Ventajas y Desventajas}\\
+\textbf{}\\
+La principal motivación para virtualizar un sistema SCADA es reducir hardware e infraestructura, y con ello los gastos; pero también existen otras razones.\textbf{}\\
+\textbf{}\\
+La virtualización de los sistemas de control permite integrarlos en el entorno corporativo y con ello estrechar los lazos entre diferentes departamentos y compartir responsabilidades y toma de decisiones, mejorando la colaboración y la integración de medidas de seguridad.
+\textbf{}\\
+Como la virtualización se utiliza para agrupar máquinas en un mismo hardware, que son posteriormente accedidas de forma remota, esta característica permite mejorar el trabajo del personal que debe acceder a información con diferentes niveles de seguridad, utilizando diferentes máquinas virtuales correctamente segmentadas en lugar de diferentes equipos separados por air-gap.
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{Ventajas: }\\
+\item	Reducción de hardware y costes operacionales
+\item	Rápida recuperación frente a desastres a snapshots y clones
+\item	Pruebas seguras arquitecturas de seguridad
+\item	Mejora del desarrollo y aseguramiento de la calidad
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{Desventajas:}\\
+
+\item	Dificultad para encontrar el origen del problema.
+\item	Posibilidad de perder muchos sistemas en un servidor
+\item	Incremento de la superficie de ataque ya que se añade el hipervisor
+\item	Posibles problemas con interfaces físicos, como puertos USB, RS.232 etc.
+\item	Rendimiento
+
+
+
+\subsection{Cotenedores con Docker}
+Docker es una plataforma de software que le permite crear, probar e implementar aplicaciones rápidamente. Docker empaqueta software en unidades estandarizadas llamadas contenedores que incluyen todo lo necesario para que el software se ejecute, incluidas bibliotecas, herramientas de sistema, código y tiempo de ejecución. Con Docker, puede implementar y ajustar la escala de aplicaciones rápidamente en cualquier entorno con la certeza de saber que su código se ejecutará.
+
+La ejecución de Docker en AWS les ofrece a los desarrolladores y administradores una manera muy confiable y económica de crear, enviar y ejecutar aplicaciones distribuidas en cualquier escala. AWS es compatible con ambos modelos de licencia de Docker: Docker Community Edition (CE) de código abierto y Docker Enterprise Edition (EE) basada en suscripción.
+
+Docker, me permite meter en un contenedor (“una caja”, algo auto contenido, cerrado) todas aquellas cosas que mi aplicación necesita para ser ejecutada (java, Maven, tomcat…) y la propia aplicación. Así yo me puedo llevar ese contenedor a cualquier máquina que tenga instalado Docker y ejecutar la aplicación sin tener que hacer nada más, ni preocuparme de qué versiones de software tiene instalada esa máquina, de si tiene los elementos necesarios para que funcione mi aplicación , de si son compatibles.
+
+ \textbf{A). Orquesta de Aplicación }\\
+\textbf{}Existen múltiples definiciones sobre el concepto de orquestación de aplicaciones pero de un modo simple, podemos definir la orquestación de servicios o aplicaciones como el uso de la automatización para la creación y composición de la arquitectura, herramientas y procesos utilizados por operadores humanos para entregar un servicio.\\
+\textbf{}La orquestación aprovecha tareas automatizadas y procesos predefinidos para permitir la creación de infraestructura complejas y para conseguir el aprovechamiento de los recursos de forma óptima y automatizada. Podemos considerar, a modo de analogía, el concepto de orquestación como un proceso y la automatización como una tarea.\\
+\textbf{}De este modo, el objetivo principal de la orquestación consiste en la automatización de procesos orientados al despliegue y ciclo de vida de las aplicaciones o servicios. Y la automatización de procesos en los despliegues software se basan en el uso de algún tipo de software que facilite la\\
+ \textbf{B). Docker y otros container: más alla de la virtualizacion}\\
+\textbf{}En un mundo donde cada vez es más común el uso de servicios informáticos en la nube y cuyos principios básicos para explicar su éxito radican en la alta disponibilidad, el diseño de tolerancia a fallos, el escalado y la elasticidad, parece que se hace obligatorio que hablemos sobre los contenedores. En este post nos referimos en concreto al proyecto “Docker”.\\
+\textbf{}Cuando pensábamos que ya habíamos alcanzado el máximo ahorro de recursos con la virtualización de todo el hardware posible de nuestra infraestructura (servidores, redes, cabinas de discos, etc.), desde hace poco tiempo se ha extendido el uso de los llamados contenedores. La idea de esta post es repasar los conceptos básicos que rodean al mundo de los contenedores y dar una visión general sobre esta herramienta.\\
+ \textbf{C). Contenedor Docker, la Tecnología de Contenedores a Mano}\\
+\textbf{}Para hablar de futuro, es necesario observar el camino recorrido y los avances tecnológicos no son ajenos a ellos. Si hablamos de virtualización 3.0, se podría decir que inició desde el uso de los primeros mainframes los cuales permitían que varios usuarios operaran al mismo tiempo a través de los “terminales tontos”.\\
+\textbf{}\\
+ \textbf{D).¿Son Seguros los Contenedores}\\
+\textbf{}Podemos pensar en un contenedor como un servidor que arranca desde una imagen estática predefinida con un sistema operativo con un kernel Linux y con las librerías y recursos mínimos necesarios de CPU, memoria, almacenamiento, etc. Realmente, un contenedor consiste en el empaquetado de una aplicación para que pueda correr en cualquier sistema abstrayéndose de la plataforma sobre la que está corriendo.\\
+
+
+
+\subsection{Hypervisores Bare Metal}
+\textbf{}\\
+Hipervisores de tipo 1 (También llamados nativos, unhosted o bare-metal)
+Un hypervisor bare-metal no funciona bajo un sistema operativo instalado sino que tiene acceso directo sobre los recursos hardware; el hipervisor se carga antes que ninguno de los sistemas operativos invitados, y todos los accesos directos a hardware son controlados por él.
+Aunque esta es la aproximación clásica y más antigua de la virtualización por hardware, actualmente las soluciones más potentes de la mayoría de fabricantes usa este enfoque.
+Nota: es muy frecuente que a los hipervisores en general se les aplique el término VMM (Monitores de máquina virtual), mientras que el término “Hypervisor” se reserva para los hipervisores de tipo 1.
+
+
+ \textbf{A). Tipos de Hypervisores }\\
+\textbf{}\\
+
+\textbf{1) Monolítico}\newline
+Son hipervisores que emulan hardware para sus máquinas virtuales.
+Esta aproximación, usada por productos como VMWare ESX, obliga a usar una gran cantidad de código que se interpone entre los recursos físicos reales y las operaciones de acceso a ellos efectuadas por las máquinas virtuales.\newline
+
+El proceso que sigue una llamada a hardware en un sistema virtualizado usando un hipervisor de tipo monolítico es:\newline
+1.- El hardware emulado debe interceptar la llamada.\newline
+2.- El VMM redirije estas llamadas hacia los drivers de dispositivo que operan dentro del hipervisor, lo cual requiere de numerosos cambios de contexto en el código de la llamada.\newline
+3.- Los drivers del hipervisor enrutan la llamada hacia el dispositivo físico.\newline
+    
+
+Este funcionaminto obliga a desarrollar drivers específicos para el hipervisor de cada componente hardware.\newline
+\textbf{}\\
+
+\textbf{2) De MicroKernel}\newline
+En esta aproximación el hipervisor se reduce a una capa de software muy sencilla, cuya única funcionalidad es la de particionar el sistema físico entre los diversos sistemas virtualizados.\newline
+Con esta manera de funcionar los hipervisores de microkernel no requieren de drivers específicos para acceder al hardware.\newline
+En el caso de Hyper-V, el acceso a los recursos físicos se hace desde la partición primaria, usando los drivers nativos de Windows Server 2008 R2.\newline
+En las particiones hija se utilizan drivers sinténticos, que son simplemente enlaces a los drivers reales ubicados en la partición primaria.\newline
+De esta manera los hipervisores de microkernel no sólo aumentan el rendimiento al reducir el código intermedio y el número de cambios de contexto necesarios, sino que también aumentan la estabilidad de los sistemas, al haber menos componentes, y sobre todo la seguridad, al reducir la superficie de ataque del hipervisor.\newline
+\textbf{}\\
+ \textbf{B). Ventajas y Desventajas}\\
+\textbf{Ventajas:}\newline
+Obtendremos un mejor rendimiento, escalabilidad y estabilidad.\newline
+\textbf{Desventajas:}\newline
+En este tipo de tecnología de virtualización el hardware soportado es más limitado ya que normalmente es construido con un conjunto limitado de drivers.\newline
+\textbf{}\\
+\textbf{C). Productos Comerciales}\\
+Entre los hypervisores de este tipo encontramos: VMware ESX o ESXi, Microsoft Hyper-V, Citrix XenServer u Oracle VM.\newline
+\textbf{VMware ESX y ESXi}\\
+VMware es el fabricante con la tecnología de virtualización más madura del mercado. Ofrece características avanzadas y escalabilidad. En contra tiene los altos costes de licenciamiento.\newline
+\textbf{Microsoft Hyper-V}\\
+Hyper-V se ha convertido en un serio competidor de VMware ESX (ESXi). En contra tiene que no dispone de ciertas características avanzadas disponibles en los productos de VMware. De todos modos, como no podía ser de otra forma, se integra perfectamente con los productos Windows. Para aquellos que no necesitan funcionalidades avanzadas, puede ser un producto perfecto para llevar a cabo su proyecto de virtualización.\newline
+\textbf{Citrix XenServer}\\
+Citrix también tiene una plataforma de virtualización basada en el proyecto open source Xen. El hypervisor es gratis, pero de igual modo a como pasa con VMware ESXi, no dispone de características avanzadas. Éstas se obtienen a partir de licencias que ofrecen gestión avanzada, automatización y alta disponibilidad.\newline
+\textbf {OracleVM}\\
+De igual modo a Citrix, Oracle ha desarrollado su hypervisor a partir del proyecto Xen. El producto de Oracle no presenta funcionalidades avanzadas que podemos encontrar en otros hypervisores bare-metal. Además su ciclo de desarrollo es lento y limitado, por lo que no puede competir con los productos de VMware, Microsoft o Citrix. Sin embargo, como es lógico, es un producto que se adapta perfectamente a los productos de Oracle.\newline
+
+
+\subsection{Maquinas virtuales VS Contenedores}
+\textbf{}\\
+\textbf{}\\
+
+
+
+\section{Conclusiones}
+
+Ambas tecnologías ofrecen ventajas distintas:
+\textbf{}\\
+La virtualización viene con una plétora de herramientas probadas a lo largo del tiempo, plataformas de gestión y orquestación, sondas virtuales, soluciones de infraestructura virtual hiperconvertidas y mucho más. La portabilidad y la interoperabilidad son las características que destacan frente a los contenedores.
+\textbf{}\\
+\textbf{}\\
+Los contenedores ofrecen una mayor eficiencia de recursos y agilidad de servicio. Aunque no parezca mucho, abre la puerta a un modelo de microservicios que puede escalar más rápido y de manera más eficiente. Los contenedores de papel se ajustan más a las iniciativas de NFV/SDN y la industria se ha dado cuenta de que Kubernetes es uno de los proyectos de código abierto de más rápido crecimiento hasta la fecha.
+
+
+
+
+\textbf{}\\
+\textbf{}\\
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+
+
+\newblock 
+1. http://revistatelematica.cujae.edu.cu/
+index.php/tele/article/view/23/21
+ \break
+\newblock 
+2. https://programarfacil.com/blog/
+que-es-un-orm/
+\break
+\newblock 
+3. https://www.beeva.com/beeva-view/tecnologia/mas-alla-de-la-virtualizacion-contenedores/
+\break
+\newblock
+4. https://searchdatacenter.techtarget.com/
+es/definicion/virtualizacion-basada-en-contenedores-virtualizacion-a-nivel-de-sistema-operativo
+\break
+\newblock
+5. https://www.incibe-cert.es/blog/asegurando-virtualizacion-tus-sistemas-control
+\break
+\newblock
+6. http://www.datakeeper.es/?p=716
+\break
+
+
+\newblock {\em }
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+\end{itemize}
+\end{flushright}
+\end{document}
+
