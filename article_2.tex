@@ -331,6 +331,7 @@ completamente independiente de los dispositivos hardware.
 \textbf{}\\
 \textbf{2.3 Virtualización de red }\\
 ------------------------------------
+
 \textbf{}\\
 La virtualización de red consiste en la creación de un
 espacio de direcciones de red virtualizado dentro de otro o entre subredes. Es
@@ -376,6 +377,8 @@ computador local.
 
 
 
+
+
 \subsection{Contenedores}
 \textbf{¿Que son los contenedores?}\\
 Es una pregunta básica, pero necesaria. Podemos pensar en un contenedor como un servidor que arranca desde una imagen estática predefinida con un sistema operativo con un kernel Linux y con las librerías y recursos mínimos necesarios de CPU, memoria, almacenamiento, etc. Realmente, un contenedor consiste en el empaquetado de una aplicación para que pueda correr en cualquier sistema abstrayéndose de la plataforma sobre la que está corriendo.
@@ -405,6 +408,7 @@ Cuando tenemos un contenedor corriendo, podemos hacer cualquier cambio de config
 \textbf{}\\
 \textbf{}\\
 
+
  \textbf{A). Virtualización de Contenedores }\\
 \textbf{}\\
 La virtualización basada en contenedores, también llamada virtualización del sistema operativo, es una aproximación a la virtualización en la cual la capa de virtualización se ejecuta como una aplicación en el sistema operativo (OS). En este enfoque, el kernel del sistema operativo se ejecuta sobre el nodo de hardware con varias máquinas virtuales (VM) invitadas aisladas, que están instaladas sobre el mismo. Los huéspedes aislados se denominan contenedores.\textbf{}\\
@@ -415,6 +419,7 @@ Por lo general, los entornos corporativos evitan la virtualización basada en co
 
 \textbf{}\\
  \textbf{B). Diferencia entre Virtualizacion Clasica y Virtualizacion de Contenedores}\\
+
 \textbf{}\\
 \textbf{- Virtualización clásica}\\
 La virtualización tal y como se entiende habitualmente supone el despliegue de múltiples máquinas software completas dentro de un mismo hardware. Dependiendo de cómo se hace el despliegue existen dos tipos de virtualización, hipervisores de tipo 1 o instalado directamente como sistema operativo, e hipervisores de tipo 2 o instalados sobre un sistema operativo comercial; como se comentaron en Mi SCADA en las nubes.\textbf{}\\
@@ -423,10 +428,12 @@ La virtualización completa de las máquinas permite que unas sean independiente
 
 \textbf{- Virtualización mediante contenedores}\\
 
+
 El último avance de la virtualización es la utilización de contenedores. Con esta tecnología no se virtualiza el sistema entero, sino que, partiendo de una imagen de base, se registran los cambios realizados tanto por instalaciones como por desinstalaciones, de aplicaciones y servicios. De esta manera los ficheros de las imágenes de las máquinas son mucho menores y las necesidades de espacio se reducen considerablemente.\textbf{}\\
 \textbf{}\\
 \textbf{-Comparación entre virtualización tradicional y con contenedores}\\\textbf{}\\
 Los contenedores están aislados unos de otros, pero comparten un mismo sistema operativo, librerías y binarios. Esto hace que el despliegue sea mucho más rápido que una instalación nueva, así como los reinicios y las migraciones, pero tiene el problema de que una vulnerabilidad en una máquina anfitrión puede afectar también al resto, al compartir la base del sistema operativo.
+
 
 \textbf{}\\
 \textbf{}\\
