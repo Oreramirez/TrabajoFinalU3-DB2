@@ -327,7 +327,18 @@ La virtualización viene con una plétora de herramientas probadas a lo largo de
 \textbf{}\\
 Los contenedores ofrecen una mayor eficiencia de recursos y agilidad de servicio. Aunque no parezca mucho, abre la puerta a un modelo de microservicios que puede escalar más rápido y de manera más eficiente. Los contenedores de papel se ajustan más a las iniciativas de NFV/SDN y la industria se ha dado cuenta de que Kubernetes es uno de los proyectos de código abierto de más rápido crecimiento hasta la fecha.
 
-
+ \textbf{ESTRATEGIAS PARA LA SOLUCION DE PROBLEMAS }\\ 
+ \textbf{}\\ 
+Aquí tenemos una lista de lo que debe hacer y en el orden que debe ser:
+ \textbf{}\\ 
+•	Defina el problema \textbf{}\\ 
+ se puede poner difícil ya que puede ser tan general como “todo está lento” o “el sistema no responde”. En el mejor caso es cuando el problema es específico y podemos tener algo como “Es un problema de bloqueo en esta tabla”. De todas maneras, esto debería ser el punto de partida. Yo no haría nada sin antes describir el problema lo más detallado posible\textbf{}\\ 
+•	Analice si es interno o externo \textbf{}\\ 
+este es un paso muy importante porque puede ayudarnos a poder solucionar casi la mitad del problema. Especialmente si hay otras cosas ejecutándose en el SQL Server, eso puede abrir una olla de grillos completamente nueva. Así que, si es interna, estás a mitad del camino. Si no es así, bueno, entonces ya es otra historia, pero de cualquier manera siempre pasaría por este paso \textbf{}\\ 
+•	Determine si está vigente o está en curso \textbf{}\\ 
+si sabemos que es un problema interno (el problema es el servidor SQL), tenemos averiguar si este está vigente o en curso. Vigente significa que acaba de suceder, con esto estamos seguros de que esta es la primera vez que se produce un problema. Si está en curso, quiere decir que tal vez haya pasado una semana sin siquiera saber que este problema está allí. En este caso, los registros nos pueden ayudar. \textbf{}\\ 
+•         Identifique y resuelva \textbf{}\\ 
+este punto es obvio y no necesita ninguna explicación. Con un poco de suerte y siguiendo los tres pasos anteriores, llegarás a solucionarlo rápidamente \textbf{}\\ .
 
 
 \textbf{}\\
