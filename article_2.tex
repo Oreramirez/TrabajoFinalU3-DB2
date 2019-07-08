@@ -118,441 +118,206 @@ modo una mayor abstracción aislando la componente "lógica de la aplicación" d
 
 %------------------------------------------------
 \textbf{}\\
-\textbf{¿Qué es la virtualización?}\\
--------------------------------------
-\textbf{}\\
-- Técnica que permite, mediante software, convertir una máquina
-real en varias máquinas independientes que se ejecutan al mismo
-tiempo.\textbf{}\\
-- Cada una de estas máquinas independientes recibe el nombre de
-“máquina virtual huesped”, y puede estar gestionada por
-cualquier sistema operativo (o casi).\textbf{}\\
-\textbf{}\\
-- La máquina real sobre la que se ejecutan los huéspedes se
-denomina “máquina anfitriona”.
-- El software que hace posible la ejecución simultánea de varios
-huéspedes sobre un único anfitrión es el “hipervisor”.
-\textbf{}\\
-\textbf{}\\
-\textbf{¿Qué es la virtualización en contenedores?}\\
+
+\textbf{AUDITORIA DE BASES DE DATOS:}\\
 ----------------------------------------------------
-- Cada huésped “verá” su propia CPU, memoria, discos, etc,
-independientemente de los recursos de que disponga el anfitrión
-o el resto de huéspedes.
 \textbf{}\\
+ Es el proceso que permite medir, asegurar, demostrar, monitorear y registrar los accesos a la información almacenada en las bases de datos incluyendo la capacidad de determinar:
+•	Quién accede a los datos \textbf{}\\
+•	Cuándo se accedió a los datos. \textbf{}\\
+•	Desde qué tipo de dispositivo/aplicación. \textbf{}\\
+•	Desde qué ubicación en la red. \textbf{}\\
+•	Cuál fue la sentencia SQL ejecutada. \textbf{}\\
+•	Cuál fue el efecto del acceso a la base de datos. \textbf{}\\
 \textbf{}\\
-\textbf{¿Qué se consigue con la virtualización?}\\
------------------------------------------------
-\textbf{}\\
-• En centros de datos:\textbf{}\\
-\textbf{}\\
-- Integrar en una única máquina varios servidores; se ahorra en:
-adquisición de equipos, actualización de hardware, costes de
-mantenimiento (refrigeración, por ejemplo), espacio, etc.
-\textbf{}\\
-- Se mantiene entre máquinas el mismo nivel de aislamiento que si
-éstas estuviesen físicamente separadas (un fallo en una máquina
-virtual no afecta al resto).
-\textbf{}\\
-\textbf{}\\
-\textbf{¿Qué se consigue con la virtualización en contenedores?}\\
-------------------------------------------------------
-\textbf{}\\
-• En entornos personales:
-\textbf{}\\
-\textbf{}\\
-- Lograr, con una única máquina, separar varios entornos de
-desarrollo y/o pruebas.
-\textbf{}\\
-\textbf{}\\
-• Aprender a utilizar nuevo software o nuevas técnicas sin poner en
-riesgo el software preexistente en nuestro equipo. Ejemplos:
-\textbf{}\\
-\textbf{}\\
-- Instalar sobre Windows una máquina virtual VMWare que sea un Linux\textbf{}\\
-Centos con Oracle express instalado.
-\textbf{}\\
-- Montar y probar una red local formada por varias máquinas virtuales
-sobre un único anfitrión.
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{Virtualización}\\
---------------------------
-
-\textbf{}\\
-La virtualización es una técnica que permite abstraer, por medio de herramientas SW, el
-HW proporcionado por una máquina física (anfitriona) para simular el funcionamiento de otra
-máquina (huesped). Al conjunto de la máquina huésped y su SO propio se le llama máquina
-virtual, la cual utiliza los recursos de la máquina física anfitriona sin ser la realmente poseedora
-de los mismos. Esto implica ciertas ventajas potenciales como economía de recursos, ahorrro
-de espacio fisico, coexistencia de multiples SO en una única máquina, mayor aislamiento entre
-procesos, etc.
-\textbf{}\\
-
-\textbf{}\\
-\textbf{Contenedor}\\
-
---------------------------
-\textbf{}\\
-Docker es un proyecto que permite crear aplicaciones en contenedores de software
-que sean ligeras, portátiles y autosuficientes Los contenedores son paquetes de elementos
-que te permiten crear un entorno donde correr aplicaciones independientemente del sistema
-operativo del host El propósito de este proyecto es investigar uso de la virtualización
-de servidores basada en Docker Containers, entender la tecnología que se ejecuta detrás de ella, 
-conocer las posibilidades que tiene y construir un clúster de contenedores que ejecuten una aplicación.
-\textbf{}\\
-\textbf{}\\
-\textbf{Tipos de virtualización}\\
-------------------------------------
-
-
-\textbf{}\\
-La virtualización permite la consolidación de múltiples recursos de TI, 
-eleva los índices de utilización de servidores y almacenamientos,
-ahorra costos y espacios y permite elevar los índices de disponibilidad. 
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{Los Siguientes son tipos de virtualización:}\\
-
-\textbf{}\\
-- Virtualización de Servidor
-\textbf{}\\
-- Virtualización de Almacenamiento
-\textbf{}\\
-- Virtualización de Escritorio
-\textbf{}\\
-- Virtualización de Redes
-\textbf{}\\
-- Virtualización de Redes
-\textbf{}\\
-\textbf{}\\
-\textbf{Ventajas de la Virtualización}\\
-------------------------------------------
-\textbf{}\\
-- Disminuye la utilización de hardware físico.
-
-- Reducción de gastos. Al disminuir los hardwares físicos los gastos asociados a ellos (luz, mantenimiento, etc.) se ven recortados.
-
-- Aumento de la eficiencia. A medida que la virtualización se va estableciendo dentro de una compañía, los usuarios utilizarán más eficiente los componentes del hardware y, por tanto, no será necesario establecer diferentes conexiones de internet para servidores, ordenadores e emails.
-
-- Largo ciclo de vida. Con la virtualización los programas se almacenan en servidores, lo que implica que la necesidad de equipos más modernos es más reducida que en un hardware.
-
-
-
-
-
-
-
-
-
-
-
-\section{Virtualización y Contenedores}
-
-
-\subsection{Virtualización}
-
-
- \textbf{A). Modelos principales de virtualizacion }\\
-
-\textbf{}\\
- \textbf{1.  Virtualización de plataforma }\\
-------------------------------------
-\textbf{}\\
- Este es un modelo especialmente a tener en cuenta, ya que es el aplicado para lo que se llama consolidación de servidores. La virtualización o consolidación de servidores puede verse como un particionado de un servidor físico de manera que pueda albergar distintos servidores dedicados (o privados) virtuales que ejecutan de manera independiente su propio sistema operativo y dentro de él los servicios que quieran ofrecer, haciendo un uso común de manera compartida y aislada sin ser conscientes del hardware subyacente
-
- \textbf{1.1  Sistemas operativos invitados }\\
-------------------------------------
-\textbf{}\\
-Sobre una aplicación para virtualización no
-hace uso de hipervisor u otra capa de virtualización que corre sobre la instancia
-de un sistema operativo sistema operativo host se permite la ejecución de
-servidores virtuales con sistemas operativos independientes.
-
- \textbf{1.2  Emulacion }\\
-------------------------------------
-\textbf{}\\
-Un emulador que replica una arquitectura hardware al completo
-procesador, juego de instrucciones, periféricos hardware- permite que se
-ejecuten sobre él máquinas virtuales.
-
-\textbf{1.3  Virtualizacion Completa }\\
-------------------------------------
-\textbf{}\\ 
-También llamada nativa. La capa de virtualización, un
-hipervisor, media entre los sistemas invitados y el anfitrión, la cual incluye
-código que emula el hardware subyacente –si es necesario- para las máquinas
-virtuales, por lo que es posible ejecutar cualquier sistema operativo sin
-modificar, siempre que soporte el hardware subyacente.
-
-\textbf{1.4  Virtualizacion a nivel del sistema operativo }\\
-------------------------------------
-\textbf{}\\
-Virtualiza los servidores sobre el
-propio sistema operativo, sin introducir una capa intermedia de virtualización.
-
-\textbf{1.5 Virtualizacion a nivel del kernel }\\
-\textbf{}\\
-
-------------------------------------
-\textbf{}\\
-Convierte el núcleo Linux en hipervisor
-utilizando un módulo, el cual permite ejecutar máquinas virtuales y otras
-instancias de sistemas operativos en el espacio de usuario del núcleo Linux
-anfitrión
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
- \textbf{2. Virtualizacion de recursos }\\
-------------------------------------
-\textbf{}\\
-En este segundo caso el recurso que se abstrae es un recurso
-individual de un computador, como puede ser la conexión a red, el almacenamiento
-principal y secundario, o la entrada y salida.
-\textbf{}\\
- \textbf{2.1  Encapsulamiento }\\
-------------------------------------
-\textbf{}\\
-Se trata de la ocultación de la complejidad y características del
-recurso creando una interfaz simplificada. Es el caso más simple de
-virtualización de recursos, como se puede ver.
-\textbf{}\\
- \textbf{2.2  Memoria virtual }\\
-------------------------------------
-\textbf{}\\
-Permite hacer creer al sistema que dispone de mayor cantidad
-de memoria principal y que se compone de segmentos contiguos. Como
-sabemos, es usada en todos los sistemas operativos modernos. 
-\textbf{}\\
-\textbf{2.3  Virtualización de almacenamientl }\\
-------------------------------------
-\textbf{}\\
-Abstracción completa del almacenamiento
-lógico sobre el físico (disco y almacenamiento son el recurso abstraído). Es
-completamente independiente de los dispositivos hardware.
-\textbf{}\\
-\textbf{2.3 Virtualización de red }\\
-------------------------------------
-
-\textbf{}\\
-La virtualización de red consiste en la creación de un
-espacio de direcciones de red virtualizado dentro de otro o entre subredes. Es
-fácil ver que el recurso abstraído es la propia red. Ejemplos bien conocidos de
-virtualización de red son OpenVPN y OpenSwarm, que permiten crear VPNs. 
-\textbf{}\\
-\textbf{3. Virtualización de aplicaciones }\\
-------------------------------------
-\textbf{}\\
- Las aplicaciones son ejecutadas encapsuladas sobre el
-sistema operativo  de manera que aunque
-creen que interactúan con él de la manera habitual, en realidad no
-lo hacen, sino que lo hacen bien con una máquina virtual de aplicación o con algún
-software de virtualización. 
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{4. Virtualización de escritorio }\\
-------------------------------------
-\textbf{}\\
- Consiste en la manipulación de forma remota del escritorio
-de usuario (aplicaciones, archivos, datos), que se encuentra separado de la máquina
-física, almacenado en un servidor central remoto en lugar de en el disco duro del
-computador local. 
-\textbf{}\\
-\textbf{}\\
- \textbf{B). Cuales son las Ventajas de la Virtualización}\\
-
-\textbf{}\\
--Hardware de los Servidores Infrautilizado
--Se agota el Espacio en los Data Centers 
--Demanda de una mejor Eficiencia Energética 
-
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Contenedores}
-\textbf{¿Que son los contenedores?}\\
-Es una pregunta básica, pero necesaria. Podemos pensar en un contenedor como un servidor que arranca desde una imagen estática predefinida con un sistema operativo con un kernel Linux y con las librerías y recursos mínimos necesarios de CPU, memoria, almacenamiento, etc. Realmente, un contenedor consiste en el empaquetado de una aplicación para que pueda correr en cualquier sistema abstrayéndose de la plataforma sobre la que está corriendo.
-\textbf{}\\
-\textbf{}\\
-\textbf{¿Para qué se pueden usar los contenedores?}\\
-Con una aplicación empaquetada con versiones de sistema, librerías y demás recursos óptimos para su ejecución, evitamos problemas de incompatibilidades. Por ejemplo, \textbf{si los contenedores son independientes de las características del servidor donde se alojan}, evitamos problemas a la hora de que actualicemos este.\textbf{}
-Otro ejemplo es que un contenedor puede ejecutarse en cualquier servidor Linux, Microsoft e incluso en MacOS nos facilita las migraciones entre máquinas.\textbf{}
-\textbf{}\\
-Las aplicaciones que pueden ejecutarse en un contenedor son múltiples y variadas, \textbf{desde un apache a una BBDD Mongo.}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{¿Qué ventajas nos ofrecen los contenedores sobre un servidor físico o virtual?}\\
-Al principio del texto hablábamos de los cuatro pilares que sostienen el éxito de los servicios que nos ofrecen desde la nube pública y que también son aplicables cuando trabajamos con contenedores. Con el uso de orquestadores de contenedores tipo Kubernetes, Openshift, Mesos o un largo etcétera, podemos asegurar que \textbf{nuestra aplicación va a estar siempre disponible para su ejecución.} Podremos aumentar o disminuir el número de contenedores en función de nuestras necesidades fácilmente y asegurar que, en caso de fallo del contenedor por cualquier casuística, este podrá arrancar automáticamente de manera instantánea.
-\textbf{}\\
-\textbf{}\\
-Los contenedores están diseñados \textbf{para que tengan una vida corta pero útil: arrancan, ejecutan su función y mueren.} Debido a que se trata de sistemas muy livianos, los contenedores normalmente tardan pocos segundos en arrancar. Por el hecho de ser tan efímeros, están enfocados a ejecutar la aplicación o aplicaciones para la que fueron creados y una vez finalizada, se elimina dicho contenedor. De esta manera, mientras no necesitemos ejecutar una aplicación en concreto, estamos dejando libres los recursos del servidor anfitrión para poder ser utilizados por otros contenedores. \textbf{De esta manera no hace falta mantener un servidor encendido 24 horas} consumiendo energía y recursos si solo va hacer, por ejemplo, una inserción de una tabla en una base de datos en un proceso batch a final de mes.
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{¿Puedo usar un contenedor como un servidor normal?}\\
-Podemos acceder a un contenedor a través de una shell como si de un servidor normal se tratase. También podemos ejecutar comandos contra un contenedor que esté corriendo, pero tenemos que tener en cuenta que, como hemos indicado antes, un contenedor arranca de una imagen estática predefinida. Es decir, \textbf{salvo que lo indiquemos a propósito}, todos los cambios que hagamos en nuestro contenedor, los perderemos cuando lo matemos. Si arrancamos un nuevo contenedor con la misma imagen, tendremos la misma configuración que tenía antes de hacer ningún cambio.
-\textbf{}\\
-\textbf{}\\
-\textbf{¿Qué pasa con mis cambios realizados sobre la imagen del contenedor?}\\
-Cuando tenemos un contenedor corriendo, podemos hacer cualquier cambio de configuración sobre su imagen inicial. En el caso de que quisiéramos conservar los cambios que hemos aplicado, podemos salvarlos en una imagen nueva. Esta nueva imagen, a su vez, estaría disponible para ser utilizada por otros contenedores y así sucesivamente.
-
-\textbf{}\\
-\textbf{}\\
-
-
- \textbf{A). Virtualización de Contenedores }\\
-\textbf{}\\
-La virtualización basada en contenedores, también llamada virtualización del sistema operativo, es una aproximación a la virtualización en la cual la capa de virtualización se ejecuta como una aplicación en el sistema operativo (OS). En este enfoque, el kernel del sistema operativo se ejecuta sobre el nodo de hardware con varias máquinas virtuales (VM) invitadas aisladas, que están instaladas sobre el mismo. Los huéspedes aislados se denominan contenedores.\textbf{}\\
-\textbf{}\\
-Con la virtualización basada en contenedores, no existe la sobrecarga asociada con tener a cada huésped ejecutando un sistema operativo completamente instalado. Este enfoque también puede mejorar el rendimiento porque hay un solo sistema operativo encargándose de los avisos de hardware. Una desventaja de la virtualización basada en contenedores, sin embargo, es que cada invitado debe utilizar el mismo sistema operativo que utiliza el host.
-\textbf{}\\
-Por lo general, los entornos corporativos evitan la virtualización basada en contenedores, prefiriendo los hipervisores y la opción de tener muchos sistemas operativos. Un entorno virtual basado en contenedor, sin embargo, es una opción ideal para los proveedores de alojamiento que necesitan una manera eficiente y segura para ofrecer sistemas operativos para que los clientes ejecuten sus servicios en ellos.
+Es uno de los procesos fundamentales para apoyar la responsabilidad delegada a TI por la organización frente a las regulaciones y su entorno de negocios o actividad.
 
+\textbf{TIPOS DE AUDITORÍAS DE BASES DE DATOS}\\
 \textbf{}\\
 \textbf{}\\
- \textbf{B). Diferencia entre Virtualizacion Clasica y Virtualizacion de Contenedores}\\
-
-\textbf{}\\
-\textbf{- Virtualización clásica}\\
-La virtualización tal y como se entiende habitualmente supone el despliegue de múltiples máquinas software completas dentro de un mismo hardware. Dependiendo de cómo se hace el despliegue existen dos tipos de virtualización, hipervisores de tipo 1 o instalado directamente como sistema operativo, e hipervisores de tipo 2 o instalados sobre un sistema operativo comercial; como se comentaron en Mi SCADA en las nubes.\textbf{}\\
-La virtualización completa de las máquinas permite que unas sean independientes de las otras, de manera que se pueden gestionar como si fuesen máquinas hardware separadas, pero favoreciendo la ampliación de recursos en caso de ser necesario.
-\textbf{}\\
-
-\textbf{- Virtualización mediante contenedores}\\
-
-
-El último avance de la virtualización es la utilización de contenedores. Con esta tecnología no se virtualiza el sistema entero, sino que, partiendo de una imagen de base, se registran los cambios realizados tanto por instalaciones como por desinstalaciones, de aplicaciones y servicios. De esta manera los ficheros de las imágenes de las máquinas son mucho menores y las necesidades de espacio se reducen considerablemente.\textbf{}\\
-\textbf{}\\
-\textbf{-Comparación entre virtualización tradicional y con contenedores}\\\textbf{}\\
-Los contenedores están aislados unos de otros, pero comparten un mismo sistema operativo, librerías y binarios. Esto hace que el despliegue sea mucho más rápido que una instalación nueva, así como los reinicios y las migraciones, pero tiene el problema de que una vulnerabilidad en una máquina anfitrión puede afectar también al resto, al compartir la base del sistema operativo.
-
-
-\textbf{}\\
-\textbf{}\\
- \textbf{C).Ventajas y Desventajas}\\
-\textbf{}\\
-La principal motivación para virtualizar un sistema SCADA es reducir hardware e infraestructura, y con ello los gastos; pero también existen otras razones.\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-La virtualización de los sistemas de control permite integrarlos en el entorno corporativo y con ello estrechar los lazos entre diferentes departamentos y compartir responsabilidades y toma de decisiones, mejorando la colaboración y la integración de medidas de seguridad.
-\textbf{}\\
-Como la virtualización se utiliza para agrupar máquinas en un mismo hardware, que son posteriormente accedidas de forma remota, esta característica permite mejorar el trabajo del personal que debe acceder a información con diferentes niveles de seguridad, utilizando diferentes máquinas virtuales correctamente segmentadas en lugar de diferentes equipos separados por air-gap.
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{Ventajas: }\\
-\item	Reducción de hardware y costes operacionales
-\item	Rápida recuperación frente a desastres a snapshots y clones
-\item	Pruebas seguras arquitecturas de seguridad
-\item	Mejora del desarrollo y aseguramiento de la calidad
-\textbf{}\\
-\textbf{}\\
+ Consideramos dos grandes tipos de auditorías de la base de datos, esta división está relacionada
+directamente con las actividades que los usuarios
+realizan, suponga que un usuario desea cambiar la
+dirección de envío de pedidos a un cliente. Para
+lograr esto se requiere que el usuario realice una
+serie de pasos, por ejemplo:
 \textbf{}\\
-\textbf{Desventajas:}\\
-
-\item	Dificultad para encontrar el origen del problema.
-\item	Posibilidad de perder muchos sistemas en un servidor
-\item	Incremento de la superficie de ataque ya que se añade el hipervisor
-\item	Posibles problemas con interfaces físicos, como puertos USB, RS.232 etc.
-\item	Rendimiento
-
-
-
-\subsection{Cotenedores con Docker}
-Docker es una plataforma de software que le permite crear, probar e implementar aplicaciones rápidamente. Docker empaqueta software en unidades estandarizadas llamadas contenedores que incluyen todo lo necesario para que el software se ejecute, incluidas bibliotecas, herramientas de sistema, código y tiempo de ejecución. Con Docker, puede implementar y ajustar la escala de aplicaciones rápidamente en cualquier entorno con la certeza de saber que su código se ejecutará.
-
-La ejecución de Docker en AWS les ofrece a los desarrolladores y administradores una manera muy confiable y económica de crear, enviar y ejecutar aplicaciones distribuidas en cualquier escala. AWS es compatible con ambos modelos de licencia de Docker: Docker Community Edition (CE) de código abierto y Docker Enterprise Edition (EE) basada en suscripción.
-
-Docker, me permite meter en un contenedor (“una caja”, algo auto contenido, cerrado) todas aquellas cosas que mi aplicación necesita para ser ejecutada (java, Maven, tomcat…) y la propia aplicación. Así yo me puedo llevar ese contenedor a cualquier máquina que tenga instalado Docker y ejecutar la aplicación sin tener que hacer nada más, ni preocuparme de qué versiones de software tiene instalada esa máquina, de si tiene los elementos necesarios para que funcione mi aplicación , de si son compatibles.
-
- \textbf{A). Orquesta de Aplicación }\\
-\textbf{}Existen múltiples definiciones sobre el concepto de orquestación de aplicaciones pero de un modo simple, podemos definir la orquestación de servicios o aplicaciones como el uso de la automatización para la creación y composición de la arquitectura, herramientas y procesos utilizados por operadores humanos para entregar un servicio.\\
-\textbf{}La orquestación aprovecha tareas automatizadas y procesos predefinidos para permitir la creación de infraestructura complejas y para conseguir el aprovechamiento de los recursos de forma óptima y automatizada. Podemos considerar, a modo de analogía, el concepto de orquestación como un proceso y la automatización como una tarea.\\
-\textbf{}De este modo, el objetivo principal de la orquestación consiste en la automatización de procesos orientados al despliegue y ciclo de vida de las aplicaciones o servicios. Y la automatización de procesos en los despliegues software se basan en el uso de algún tipo de software que facilite la\\
- \textbf{B). Docker y otros container: más alla de la virtualizacion}\\
-\textbf{}En un mundo donde cada vez es más común el uso de servicios informáticos en la nube y cuyos principios básicos para explicar su éxito radican en la alta disponibilidad, el diseño de tolerancia a fallos, el escalado y la elasticidad, parece que se hace obligatorio que hablemos sobre los contenedores. En este post nos referimos en concreto al proyecto “Docker”.\\
-\textbf{}Cuando pensábamos que ya habíamos alcanzado el máximo ahorro de recursos con la virtualización de todo el hardware posible de nuestra infraestructura (servidores, redes, cabinas de discos, etc.), desde hace poco tiempo se ha extendido el uso de los llamados contenedores. La idea de esta post es repasar los conceptos básicos que rodean al mundo de los contenedores y dar una visión general sobre esta herramienta.\\
- \textbf{C). Contenedor Docker, la Tecnología de Contenedores a Mano}\\
-\textbf{}Para hablar de futuro, es necesario observar el camino recorrido y los avances tecnológicos no son ajenos a ellos. Si hablamos de virtualización 3.0, se podría decir que inició desde el uso de los primeros mainframes los cuales permitían que varios usuarios operaran al mismo tiempo a través de los “terminales tontos”.\\
-\textbf{}\\
-\textbf{}\\
- \textbf{D).¿Son Seguros los Contenedores}\\
-\textbf{}Podemos pensar en un contenedor como un servidor que arranca desde una imagen estática predefinida con un sistema operativo con un kernel Linux y con las librerías y recursos mínimos necesarios de CPU, memoria, almacenamiento, etc. Realmente, un contenedor consiste en el empaquetado de una aplicación para que pueda correr en cualquier sistema abstrayéndose de la plataforma sobre la que está corriendo.\\
-
-
-
-\subsection{Hypervisores Bare Metal}
-\textbf{}\\
-Hipervisores de tipo 1 (También llamados nativos, unhosted o bare-metal)
-Un hypervisor bare-metal no funciona bajo un sistema operativo instalado sino que tiene acceso directo sobre los recursos hardware; el hipervisor se carga antes que ninguno de los sistemas operativos invitados, y todos los accesos directos a hardware son controlados por él.
-Aunque esta es la aproximación clásica y más antigua de la virtualización por hardware, actualmente las soluciones más potentes de la mayoría de fabricantes usa este enfoque.
-Nota: es muy frecuente que a los hipervisores en general se les aplique el término VMM (Monitores de máquina virtual), mientras que el término “Hypervisor” se reserva para los hipervisores de tipo 1.
-
-
- \textbf{A). Tipos de Hypervisores }\\
-\textbf{}\\
-
-\textbf{1) Monolítico}\newline
-Son hipervisores que emulan hardware para sus máquinas virtuales.
-Esta aproximación, usada por productos como VMWare ESX, obliga a usar una gran cantidad de código que se interpone entre los recursos físicos reales y las operaciones de acceso a ellos efectuadas por las máquinas virtuales.\newline
-
-El proceso que sigue una llamada a hardware en un sistema virtualizado usando un hipervisor de tipo monolítico es:\newline
-1.- El hardware emulado debe interceptar la llamada.\newline
-2.- El VMM redirije estas llamadas hacia los drivers de dispositivo que operan dentro del hipervisor, lo cual requiere de numerosos cambios de contexto en el código de la llamada.\newline
-3.- Los drivers del hipervisor enrutan la llamada hacia el dispositivo físico.\newline
-    
-
-Este funcionaminto obliga a desarrollar drivers específicos para el hipervisor de cada componente hardware.\newline
+\textbf{P 1. Conectarse a la base de datos.}\\
+\textbf{P 2. Ejecutar el cambio de dirección.}\\
+\textbf{P 3. Desconectarse.}\\
 \textbf{}\\
-
-\textbf{2) De MicroKernel}\newline
-En esta aproximación el hipervisor se reduce a una capa de software muy sencilla, cuya única funcionalidad es la de particionar el sistema físico entre los diversos sistemas virtualizados.\newline
-Con esta manera de funcionar los hipervisores de microkernel no requieren de drivers específicos para acceder al hardware.\newline
-En el caso de Hyper-V, el acceso a los recursos físicos se hace desde la partición primaria, usando los drivers nativos de Windows Server 2008 R2.\newline
-En las particiones hija se utilizan drivers sinténticos, que son simplemente enlaces a los drivers reales ubicados en la partición primaria.\newline
-De esta manera los hipervisores de microkernel no sólo aumentan el rendimiento al reducir el código intermedio y el número de cambios de contexto necesarios, sino que también aumentan la estabilidad de los sistemas, al haber menos componentes, y sobre todo la seguridad, al reducir la superficie de ataque del hipervisor.\newline
-\textbf{}\\
- \textbf{B). Ventajas y Desventajas}\\
-\textbf{Ventajas:}\newline
-Obtendremos un mejor rendimiento, escalabilidad y estabilidad.\newline
-\textbf{Desventajas:}\newline
-En este tipo de tecnología de virtualización el hardware soportado es más limitado ya que normalmente es construido con un conjunto limitado de drivers.\newline
-\textbf{}\\
-\textbf{C). Productos Comerciales}\\
-Entre los hypervisores de este tipo encontramos: VMware ESX o ESXi, Microsoft Hyper-V, Citrix XenServer u Oracle VM.\newline
-\textbf{VMware ESX y ESXi}\\
-VMware es el fabricante con la tecnología de virtualización más madura del mercado. Ofrece características avanzadas y escalabilidad. En contra tiene los altos costes de licenciamiento.\newline
-\textbf{Microsoft Hyper-V}\\
-Hyper-V se ha convertido en un serio competidor de VMware ESX (ESXi). En contra tiene que no dispone de ciertas características avanzadas disponibles en los productos de VMware. De todos modos, como no podía ser de otra forma, se integra perfectamente con los productos Windows. Para aquellos que no necesitan funcionalidades avanzadas, puede ser un producto perfecto para llevar a cabo su proyecto de virtualización.\newline
-\textbf{Citrix XenServer}\\
-Citrix también tiene una plataforma de virtualización basada en el proyecto open source Xen. El hypervisor es gratis, pero de igual modo a como pasa con VMware ESXi, no dispone de características avanzadas. Éstas se obtienen a partir de licencias que ofrecen gestión avanzada, automatización y alta disponibilidad.\newline
-\textbf {OracleVM}\\
-De igual modo a Citrix, Oracle ha desarrollado su hypervisor a partir del proyecto Xen. El producto de Oracle no presenta funcionalidades avanzadas que podemos encontrar en otros hypervisores bare-metal. Además su ciclo de desarrollo es lento y limitado, por lo que no puede competir con los productos de VMware, Microsoft o Citrix. Sin embargo, como es lógico, es un producto que se adapta perfectamente a los productos de Oracle.\newline
-
-
-\subsection{Maquinas virtuales VS Contenedores}
+ Los pasos 1 y 3 se lograrían si cuenta con los
+privilegios o derechos necesarios para conectarse
+o desconectarse; para el paso 2 el usuario debe
+tener privilegios de acceso a la tabla de clientes, y
+la posibilidad de hacer una modificación. Basándonos en esta secuencia de pasos establecemos el
+primer tipo de auditoría, y la llamamos auditoría
+de actividades de los usuarios.
 \textbf{}\\
 \textbf{}\\
-
-
-
+ El segundo tipo de auditoría está inmersa en
+el paso 2. ¿Qué ocurrió realmente cuando cambió el
+dato, qué valores quedaron?, ¿qué valores había?, en
+otras palabras, ¿qué cambios produjo la transacción?
+Los controles que establezcamos para conocer lo
+que realmente ocurrió los llamaremos auditoría de
+transacciones.
+\textbf{}\\
+\textbf{}\\
+\textbf{Auditoría de actividades}\\
+\textbf{}\\
+ El primer tipo de auditoría lo llamamos au ditoría de actividades, que consiste en controlar las
+actividades que realizan los usuarios en los objetos
+de la base de datos y entenderemos como objetos
+todas las tablas, vistas, restricciones de integridad
+que los usuarios crean en la base de datos.\textbf{}\\
+\textbf{}\\
+ Este proceso de monitoreo de las actividades
+de los usuarios permite encontrar posibles accesos a
+objetos no autorizados, conexiones en horas o días
+fuera de horarios normales. Toda esta actividad se
+va almacenando en una tabla o en un archivo que
+llamaremos el registro de auditoría.
+\textbf{}\\
+\textbf{}\\
+ El registro de auditoría (RA) tiene un
+crecimiento muy alto, por lo que es necesario
+administrarlo adecuadamente, muchas veces este
+registro llega a ser igual o mayor en tamaño que la
+base de datos. Imagínese el RA de una organización
+de más de 2000 empleados, que además permite
+el acceso de clientes por Internet, o el registro de
+auditoría de un banco, que puede recibir más de 20
+transacciones por minuto. 
+\textbf{}\\
+\textbf{}\\
+\textbf{Auditoría de transacciones}\\
+La auditoría de transacciones consiste en
+implementar una serie de controles que permiten
+llevar una bitácora de todas las transacciones que los
+usuarios realizan, pero a un nivel tal que podamos
+establecer una historia de cómo se produjeron los
+cambios. Al igual que en el tipo anterior, es necesario
+crear un registro de auditoría al que llamaremos
+registro de auditoría de transacciones (RAT). El
+crecimiento del RAT es superior al del RA, ya que
+es posible que un usuario que se conecte una sola
+vez, pueda hacer 30 transacciones. En este caso el
+RA almacena las actividades de conexión y desconexión, básicamente mientras que el RAT almacena
+30 registros correspondientes a la información antes
+y después de cada transacción.
+\textbf{}\\
+\textbf{}\\
+\textbf{Sistemas de Gestión de Bases de Datos (SGBD).}\\
+\textbf{}\\
+Entre los componentes del SGBD podemos destacar el núcleo (kernel), el catálogo (componente fundamental para asegurar la seguridad de la base de datos), las utilidades para el administrador de la base de datos (entre la que se pueden encontrar algunas para crear usuario, conceder privilegios y resolver otras cuestiones relativas a la confidencialidad); las que se encargan de la recuperación de la BD: rearranque, copias de respaldo, ficheros diarios (log), etc. Y algunas funciones de auditoría, así como los lenguajes de la cuarta generación (L4G) que incorpora el propio SGBD.\textbf{}\\
+\textbf{}\\
+En cuanto a las funciones de auditoría que ofrece el propio sistema, prácticamente todos los productos del mercado permiten registrar ciertas operaciones realizadas sobre la base de datos de un fichero (o en un conjunto de tablas) de pistas de auditoría (audit trail). El propio modelo de referencia de gestión de datos -ISO (1993)- considera las pistas de auditoría como un elemento esencial de un SGBD, señalando que ―el requisito para la auditoría es que la causa y el efecto de todos los cambios de la base de datos sean verificables”. El auditor deberá revisar, por lo tanto, la utilización de todas las herramientas que ofrece el propio SGBD y las políticas y procedimientos que sobre su utilización haya definido el administrador, para valorar si son suficientes o si deben ser mejorados.
+
+
+\textbf{}\\
+\textbf{}\\
+
+\textbf{Software de Auditoría.}\\
+Son paquetes que pueden emplearse para facilitar la labor del auditor, en cuanto a la extracción de datos de la base, el seguimiento de las transacciones, datos de prueba, etc. Hay también productos muy interesantes que permiten cuadrar datos de diferentes entornos permitiendo realizar una verdadera ―auditoría del dato. 
+\textbf{}\\
+\textbf{}\\
+\textbf{Sistema de Monitorización y Ajuste (Tunning) }\\
+Este tipo de sistema complementan las facilidades ofrecidas por el propio SGBD, ofreciendo mayor información para optimizar el sistema, llegando a ser en determinadas ocasiones verdaderos sistemas expertos que proporcionan la estructura óptima de la base de datos y de ciertos parámetros del SGBD y del SO. La optimización de la base de datos, como ya hemos señalado, es fundamental, puesto que se actúa en un entorno concurrente puede degradarse fácilmente el nivel de servicio que haya podido establecerse con los usuarios.
+
+
+\textbf{}\\
+\textbf{}\\
+\textbf{Características principales de un sistema de auditoría de base de datos }\\
+\textbf{}\\
+El sistema de auditoría de base de datos debe cumplir con ciertas características como las siguientes:\textbf{}\\
+\textbf{SISTEMA CONFIABLE E INTEGRAL }\\
+\textbf{}\\
+Se deben poder garantizar esquemas de auditoría contínua todos los 365 días del año, es decir: \textbf{}\\
+\textbf{}\\
+•	El volumen de la información relacionada con las trazas de auditoría puede ser muchas veces más grande que el tamaño de la base de datos a auditar. \textbf{}\\
+•	Se debe poder controlar el acceso y la modificación a las trazas almacenadas. \textbf{}\\
+•	Se debe poder proteger la información almacenada en las trazas de auditoría \textbf{}\\
+ \textbf{}\\
+ \textbf{}\\
+Se deben poder auditar el acceso a la base de datos desde todas las posibles capas de acceso:
+ \textbf{}\\ 
+ \textbf{Aplicación / Front End:}\\ La capa de aplicación es utilizada por usuarios calificados y posiblemente por usuarios maliciosos. Se pueden explotar las debilidades de las aplicaciones. Por ejemplo con la inyección SQL.  \textbf{}\\ 
+ \textbf{}\\ 
+ \textbf{Servidor de Aplicación / Web Server: }\\  Los usuarios con privilegios pueden tener acceso directo utilizando funciones del servidor de aplicaciones. Usuarios maliciosos pueden aprovechar las debilidades de los servidores de aplicaciones. Pueden existir caballos de Troya listos para actuar en el código de las aplicaciones. 
+ \textbf{}\\ 
+ \textbf{Manejador de BDD:}\\ Pueden realizarse accesos no autorizados ODBC a través de la Red; Accesos no autorizados de usuarios con privilegios. Vulnerabilidades conocidas de los manejadores de base de datos. 
+ \textbf{}\\ 
+ \textbf{Sistema Operativo:}\\  Tenemos los accesos directos a los archivos en el sistema operativo.
+ \textbf{CAPAZ DE CONSOLIDAR LAS TRAZAS DE AUDITORÍA }\\
+ \textbf{}\\ 
+Las trazas de auditoría deben tener: 
+ \textbf{}\\ 
+•	Quién realizó la operación  \textbf{}\\ 
+•	Desde donde se realizó la operación (Dirección IP / Host o Aplicación)  \textbf{}\\ 
+•	Cuándo se realizó la operación  \textbf{}\\ 
+•	Qué se hizo durante la operación (información antes y después)  \textbf{}\\ 
+•	Por qué se hizo la operación (contexto sobre el que se realiza la operación) \textbf{}\\ 
+ \textbf{}\\ 
+ \textbf{REGLAS DE AUDITORÍA BASADAS EN NECESIDADES ESPECÍFICAS }\\ 
+ \textbf{}\\ 
+Las trazas de auditoría pueden llegar a tener tamaños inmanejables (cientos de terabytes de información).  \textbf{}\\ 
+Cada proceso de auditoría requiere su propia definición de reglas de auditoría se deben utilizar:  \textbf{}\\ 
+ \textbf{}\\ 
+•	Qué método de auditoría  \textbf{}\\ 
+•	Qué Servidor /manejador (Base de Datos / tablas)  \textbf{}\\ 
+•	Qué usuarios (Objetos, Horas, Acciones)  \textbf{}\\ 
+•	Qué acciones tomar  \textbf{}\\ 
+
+
+ \textbf{Tipos de eventos a auditar:}\\ 
+ \textbf{}\\ 
+•	Eventos tipo DDL (Data Definition Lenguaje): asociados con la creación de usuarios, roles, tablas, etc. \textbf{}\\ 
+•	Eventos tipo DML (Data Manipulation Lenguaje): insert, update, delete. \textbf{}\\ 
+•	Eventos tipo Select: consultas de información \textbf{}\\ 
+•	Recompilaciones de Scripts \textbf{}\\ 
+•	Auditoría de los usuarios con privilegios de acceso. \textbf{}\\ 
+ \textbf{}\\ 
+ \textbf{}\\ .
+ \textbf{NO SE DEBE AFECTAR EL DESEMPEÑO DE LA BASE DE DATOS. }\\ 
+ \textbf{}\\ .
+Una de las principales preocupaciones relacionada con la auditoría de base de datos es su impacto en el desempeño de las aplicaciones. Es decir:  \textbf{}\\ .
+ \textbf{}\\ .
+•	Impacto en el tiempo de respuesta de las aplicaciones  \textbf{}\\ .
+•	Impacto sobre la utilización de los manejadores de base de datos  \textbf{}\\ .
+•	Impacto sobre el espacio en los servidores \textbf{}\\ .
+ \textbf{CAPAZ DE GENERAR NOTIFICACIONES EN TIEMPO REAL }\\ .
+ \textbf{}\\ .
+Para lograr esquemas más efectivos de auditoría es necesario poder generar notificaciones en tiempo real. Mediante Email o Sistemas de monitoreo central. 
+
+ \textbf{}\\ .
+ \textbf{CAPACIDAD PARA RETENER TRAZAS POR LARGOS PERÍODOS DE TIEMPO}\\ .
+ \textbf{}\\ .
+ Como el número de trazas puede ser muy grande se necesitan esquemas de archivos y preservación, como son:  \textbf{}\\ .
+•	Compresión de la información \textbf{}\\ .
+•	Movimiento a cintas  \textbf{}\\ .
+•	Rutinas de eliminación \textbf{}\\ .
+ \textbf{}\\ 
+ \textbf{ADMINISTRABLE Y ESCALABLE EN EL TIEMPO }\\ .
+ \textbf{}\\ 
+Debe realizarse una planificación de la Auditoría de base de datos que permita:  \textbf{}\\ 
+ \textbf{}\\ 
+1. Identificar la base de datos de la institución  \textbf{}\\ 
+2. Clasificar los niveles de riesgo de los datos en la base de datos  \textbf{}\\ 
+3. Analizar los permisos de acceso  \textbf{}\\ 
+4. Analizar los controles existentes de acceso a la base de datos  \textbf{}\\ 
+5. Establecer los modelos de auditoría de BD a utilizar  \textbf{}\\ 
+6. Establecer las pruebas a realizar para la BD, aplicación y/o usuario  \textbf{}\\ 
+7. Alcance de la Auditoría (Selección de: tablas, usuarios, horario a auditar)  \textbf{}\\ 
+8. Tipos de Acciones (Solo registro de eventos, solo generación de alertas, Generación y registro de alertas)  \textbf{}\\ 
+9. Reportes a producir (Contenido y Frecuencia) \textbf{}\\ 
+ \textbf{}\\ 
+ \textbf{MONITOREO }\\ 
+ \textbf{}\\ 
+La opción de Auditoría de Sistema tiene además la opción de Monitoreo, la cual permite visualizar la información de auditoría de sistema de BDD Oracle que fue configurada en las opciones anteriores. El monitoreo se realiza para: Sesiones y Objetos (acciones realizadas sobre estos). 
+ \textbf{}\\ 
+
+Al escoger la opción de Sesiones del menú monitoreo de Sistema (fig. 22) obtenemos como resultado la siguiente información (Ver figuras: 23, 24, 25, 26) : Nombre de usuario, código del Terminal, Nombre del Usuario de Sistema Operativo, Estado de conexión, y un menú navegable que contiene información adicional como: Fecha y hora de conexión de usuario para Ingreso y salida creadas por AUDIT SESSION (ver fig. 23); Acción [contiene el nombre del tipo de acción : ACTION NAME] , Userhost [contiene el nombre de la máquina anfitrión del cliente]y Log off (ver fig. 24); Logoff Lread [es la lectura lógica de la sesión] , Logoff Pread [es la lectura física de la sesión] y Logoff Lwrite [es la escritura lógica de las sesión](Ver fig. 25); Logoff Dlock [son los puntos muertos detectados durante la sesión] y Sessionid [es el identificador numérico para cada sesión Oracle] (ver fig. 26). La información mostrada en las pantallas será la escogida durante la configuración de la auditoría de sistemas.
 \section{Conclusiones}
 
 Ambas tecnologías ofrecen ventajas distintas:
