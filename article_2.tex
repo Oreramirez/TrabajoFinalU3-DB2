@@ -404,6 +404,7 @@ Al principio del texto hablábamos de los cuatro pilares que sostienen el éxito
 Los contenedores están diseñados \textbf{para que tengan una vida corta pero útil: arrancan, ejecutan su función y mueren.} Debido a que se trata de sistemas muy livianos, los contenedores normalmente tardan pocos segundos en arrancar. Por el hecho de ser tan efímeros, están enfocados a ejecutar la aplicación o aplicaciones para la que fueron creados y una vez finalizada, se elimina dicho contenedor. De esta manera, mientras no necesitemos ejecutar una aplicación en concreto, estamos dejando libres los recursos del servidor anfitrión para poder ser utilizados por otros contenedores. \textbf{De esta manera no hace falta mantener un servidor encendido 24 horas} consumiendo energía y recursos si solo va hacer, por ejemplo, una inserción de una tabla en una base de datos en un proceso batch a final de mes.
 \textbf{}\\
 \textbf{}\\
+\textbf{}\\
 \textbf{¿Puedo usar un contenedor como un servidor normal?}\\
 Podemos acceder a un contenedor a través de una shell como si de un servidor normal se tratase. También podemos ejecutar comandos contra un contenedor que esté corriendo, pero tenemos que tener en cuenta que, como hemos indicado antes, un contenedor arranca de una imagen estática predefinida. Es decir, \textbf{salvo que lo indiquemos a propósito}, todos los cambios que hagamos en nuestro contenedor, los perderemos cuando lo matemos. Si arrancamos un nuevo contenedor con la misma imagen, tendremos la misma configuración que tenía antes de hacer ningún cambio.
 \textbf{}\\
@@ -423,6 +424,7 @@ Con la virtualización basada en contenedores, no existe la sobrecarga asociada 
 \textbf{}\\
 Por lo general, los entornos corporativos evitan la virtualización basada en contenedores, prefiriendo los hipervisores y la opción de tener muchos sistemas operativos. Un entorno virtual basado en contenedor, sin embargo, es una opción ideal para los proveedores de alojamiento que necesitan una manera eficiente y segura para ofrecer sistemas operativos para que los clientes ejecuten sus servicios en ellos.
 
+\textbf{}\\
 \textbf{}\\
  \textbf{B). Diferencia entre Virtualizacion Clasica y Virtualizacion de Contenedores}\\
 
@@ -446,6 +448,7 @@ Los contenedores están aislados unos de otros, pero comparten un mismo sistema 
  \textbf{C).Ventajas y Desventajas}\\
 \textbf{}\\
 La principal motivación para virtualizar un sistema SCADA es reducir hardware e infraestructura, y con ello los gastos; pero también existen otras razones.\textbf{}\\
+\textbf{}\\
 \textbf{}\\
 La virtualización de los sistemas de control permite integrarlos en el entorno corporativo y con ello estrechar los lazos entre diferentes departamentos y compartir responsabilidades y toma de decisiones, mejorando la colaboración y la integración de medidas de seguridad.
 \textbf{}\\
@@ -488,6 +491,7 @@ Docker, me permite meter en un contenedor (“una caja”, algo auto contenido, 
 \textbf{}Cuando pensábamos que ya habíamos alcanzado el máximo ahorro de recursos con la virtualización de todo el hardware posible de nuestra infraestructura (servidores, redes, cabinas de discos, etc.), desde hace poco tiempo se ha extendido el uso de los llamados contenedores. La idea de esta post es repasar los conceptos básicos que rodean al mundo de los contenedores y dar una visión general sobre esta herramienta.\\
  \textbf{C). Contenedor Docker, la Tecnología de Contenedores a Mano}\\
 \textbf{}Para hablar de futuro, es necesario observar el camino recorrido y los avances tecnológicos no son ajenos a ellos. Si hablamos de virtualización 3.0, se podría decir que inició desde el uso de los primeros mainframes los cuales permitían que varios usuarios operaran al mismo tiempo a través de los “terminales tontos”.\\
+\textbf{}\\
 \textbf{}\\
  \textbf{D).¿Son Seguros los Contenedores}\\
 \textbf{}Podemos pensar en un contenedor como un servidor que arranca desde una imagen estática predefinida con un sistema operativo con un kernel Linux y con las librerías y recursos mínimos necesarios de CPU, memoria, almacenamiento, etc. Realmente, un contenedor consiste en el empaquetado de una aplicación para que pueda correr en cualquier sistema abstrayéndose de la plataforma sobre la que está corriendo.\\
